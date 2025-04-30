@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop ASUS Zenbook 14",
+      "category": "Elektronik",
+      "price": 12000000,
+      "stock": 150
+    },
+    {
+      "id": 2,
+      "name": "Mouse Logitech MX Master 3S",
+      "category": "Aksesoris Komputer",
+      "price": 1500000,
+      "stock": 200
+    },
+    {
+      "id": 3,
+      "name": "Kemeja Pria Lengan Panjang Katun",
+      "category": "Fashion Pria",
+      "price": 250000,
+      "stock": 500
+    },
+    {
+      "id": 4,
+      "name": "SSD Samsung 980 Pro 1TB NVMe",
+      "category": "Komponen Komputer",
+      "price": 1800000,
+      "stock": 100
+    },
+    {
+      "id": 5,
+      "name": "Tas Ransel Pria Anti Air",
+      "category": "Fashion Pria",
+      "price": 350000,
+      "stock": 300
+    },
+    {
+      "id": 6,
+      "name": "Monitor LED LG 24 inch",
+      "category": "Elektronik",
+      "price": 2800000,
+      "stock": 120
+    },
+    {
+      "id": 7,
+      "name": "Keyboard Mekanik Redragon K630 Dragonborn",
+      "category": "Aksesoris Komputer",
+      "price": 750000,
+      "stock": 180
+    },
+    {
+      "id": 8,
+      "name": "Celana Panjang Jeans Pria Slim Fit",
+      "category": "Fashion Pria",
+      "price": 300000,
+      "stock": 450
+    },
+    {
+      "id": 9,
+      "name": "RAM Corsair Vengeance LPX 16GB DDR4",
+      "category": "Komponen Komputer",
+      "price": 900000,
+      "stock": 160
+    },
+    {
+      "id": 10,
+      "name": "Headphone Sony WH-1000XM5",
+      "category": "Elektronik",
+      "price": 4500000,
+      "stock": 90
+    }
+  ]
+}
