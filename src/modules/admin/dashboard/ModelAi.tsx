@@ -39,7 +39,6 @@ export const ModelAi = () => {
     <div className="w-full bg-gray-300 rounded-3xl px-8 py-4 shadow mb-8">
       <div className="flex flex-col mb-4">
         <h1 className="text-3xl font-bold text-slate-800">Testing AI Dashboard</h1>
-        <p className="text-xl text-slate-500">Coming Soon</p>
       </div>
 
       <Form {...form}>

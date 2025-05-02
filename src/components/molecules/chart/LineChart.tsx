@@ -10,6 +10,7 @@ import {
   Legend,
   Filler,
 } from 'chart.js';
+import { DATA_DUMMY_CHART } from '@/constant/data-dummy-chart';
 
 ChartJS.register(
   CategoryScale,
@@ -22,16 +23,8 @@ ChartJS.register(
   Filler
 );
 
-export const ChartAuto = () => {
-  const data = [
-    { year: 2010, count: 10 },
-    { year: 2011, count: 20 },
-    { year: 2012, count: 15 },
-    { year: 2013, count: 25 },
-    { year: 2014, count: 22 },
-    { year: 2015, count: 30 },
-    { year: 2016, count: 28 },
-  ];
+export const LineChart = () => {
+  const data = DATA_DUMMY_CHART;
 
   const chartData = {
     labels: data.map((d) => d.year),

@@ -2,7 +2,7 @@ import { useGetProductsQuery } from '@/stores/api/apiSlice';
 import { Loader2, AlertCircle, Package } from 'lucide-react';
 import { DashboardTable } from './DashboardTable';
 import { ModelAi } from './ModelAi';
-import { ChartAuto } from './ChartAuto';
+import { LineChart } from '@/components/molecules/chart/LineChart';
 
 export const DashboardAdmin = () => {
   const { data: products = [], isLoading, isError, isUninitialized } = useGetProductsQuery();
@@ -37,7 +37,7 @@ export const DashboardAdmin = () => {
       </div>
 
       <ModelAi />
-      <ChartAuto />
+      <LineChart />
 
       <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
         <div className="px-6 py-4 border-b border-gray-100">
