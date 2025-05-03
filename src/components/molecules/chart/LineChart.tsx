@@ -10,7 +10,7 @@ import {
   Legend,
   Filler,
 } from 'chart.js';
-import { DATA_DUMMY_CHART } from '@/constant/data-dummy-chart';
+import { dataDummyChart } from '@/constant/data-dummy-chart';
 
 ChartJS.register(
   CategoryScale,
@@ -24,14 +24,12 @@ ChartJS.register(
 );
 
 export const LineChart = () => {
-  const data = DATA_DUMMY_CHART;
-
   const chartData = {
-    labels: data.map((d) => d.year),
+    labels: dataDummyChart.map((d) => d.year),
     datasets: [
       {
         label: 'Count',
-        data: data.map((d) => d.count),
+        data: dataDummyChart.map((d) => d.count),
         borderColor: 'rgba(75, 192, 192, 1)',
         backgroundColor: 'rgba(75, 192, 192, 0.2)',
         borderWidth: 2,
@@ -43,15 +41,25 @@ export const LineChart = () => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       y: {
         beginAtZero: true,
       },
     },
+    plugins: {
+      legend: {
+        position: 'bottom' as const,
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Line Chart',
+      },
+    },
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+    <div className="w-full  h-72 flex justify-center items-center">
       <Line data={chartData} options={options} />
     </div>
   );
