@@ -1,25 +1,28 @@
 import { Bar } from 'react-chartjs-2';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-  Filler,
-} from 'chart.js';
-import { dataDummyChart } from '@/constant/data-dummy-chart';
+import { Chart as ChartJS, BarElement } from 'chart.js';
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, Filler);
+ChartJS.register(BarElement);
 
-export const BarChart = () => {
+interface DataProps {
+  labels: string[];
+  datasets: {
+    label: string;
+    data: number[];
+  }[];
+}
+
+export const BarChart = (props: DataProps) => {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
     plugins: {
       legend: {
-        position: 'top' as const,
+        position: 'bottom' as const,
       },
       title: {
         display: true,
@@ -29,17 +32,14 @@ export const BarChart = () => {
     },
   };
   const barData = {
-    labels: dataDummyChart.map((data) => data.year),
-    datasets: [
-      {
-        label: 'Count',
-        data: dataDummyChart.map((data) => data.count),
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 2,
-        fill: true,
-      },
-    ],
+    labels: props.labels.map((data) => data),
+    datasets: props.datasets.map((data) => ({
+      label: data.label,
+      data: data.data,
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      borderWidth: 2,
+    })),
   };
   return (
     <div className="w-full h-72 flex justify-center items-center">

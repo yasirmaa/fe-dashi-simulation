@@ -1,4 +1,3 @@
-import { BarChart } from '@/components/molecules/chart/BarChart';
 import { BubbleChart } from '@/components/molecules/chart/BubbleChart';
 import { DoughnutChart } from '@/components/molecules/chart/DoughnutChart';
 import { LineChart } from '@/components/molecules/chart/LineChart';
@@ -11,7 +10,7 @@ export const ChartGraph = () => {
   return (
     <div className="grid grid-cols-2 gap-8 w-full h-full">
       <LineChart />
-      <BarChart />
+      {/* <BarChart /> */}
       <PieChart />
       <DoughnutChart />
       <PolarAreaChart />

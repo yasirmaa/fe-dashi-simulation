@@ -2,6 +2,7 @@ import { useGetProductsQuery } from '@/stores/api/apiSlice';
 import { Loader2, AlertCircle, Package } from 'lucide-react';
 import { DashboardTable } from './DashboardTable';
 import { ChartGraph } from './ChartGraph';
+import { ModelAi } from './ModelAi';
 
 export const DashboardAdmin = () => {
   const { data: products = [], isLoading, isError, isUninitialized } = useGetProductsQuery();
@@ -35,6 +36,7 @@ export const DashboardAdmin = () => {
         </div>
       </div>
 
+      <ModelAi />
       <ChartGraph />
 
       <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
