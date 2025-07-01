@@ -13,9 +13,10 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { postProcessQuery } from '@/services/admin/processQuery';
 import { Skeleton } from '@/components/ui/skeleton';
 import { BarChart } from '@/components/molecules/chart/BarChart';
+import { LineChart } from '@/components/molecules/chart/LineChart';
+import { postProcessQuery } from '@/services/admin/ragApiService';
 
 const formSchema = z.object({
   inputPrompt: z.string().min(2, {
@@ -50,12 +51,27 @@ export const ModelAi = () => {
     setError('');
     try {
       const response = await postProcessQuery(input.inputPrompt);
+      console.log('Response:', response.data);
+
       setChartData(response.data);
     } catch (error) {
       console.error('Error:', error);
       setError('Failed to process your query. Please try again.');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleFetch = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/products');
+      if (!response.ok) throw new Error('Failed to fetch');
+      const result = await response.json();
+
+      console.log('Fetched data:', result);
+    } catch (err) {
+      console.error('Fetch error:', err);
+      setError('Terjadi kesalahan saat mengambil data.');
     }
   };
 
@@ -70,6 +86,8 @@ export const ModelAi = () => {
 
     if (chartData.visualization_type === 'bar') {
       return <BarChart labels={chartData.labels} datasets={chartData.datasets} />;
+    } else if (chartData.visualization_type === 'line') {
+      return <LineChart labels={chartData.labels} datasets={chartData.datasets} />;
     }
 
     return <div className="text-center text-gray-500">Unsupported chart type</div>;
@@ -77,8 +95,15 @@ export const ModelAi = () => {
 
   return (
     <div className="w-full bg-slate-200 rounded-3xl px-8 py-4 shadow mb-8">
-      <div className="flex flex-col mb-4">
+      <div className="flex flex-col mb-4 justify-between">
         <h1 className="text-3xl font-bold text-slate-800">Testing AI Dashboard</h1>
+        <button
+          type="button"
+          onClick={handleFetch}
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          Fetch API
+        </button>
       </div>
 
       <div className="flex w-full items-center justify-center p-8">{renderChart()}</div>

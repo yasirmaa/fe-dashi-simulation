@@ -1,25 +1,17 @@
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, LinearScale, PointElement, LineElement } from 'chart.js';
-import { dataDummyChart } from '@/constant/data-dummy-chart';
 
 ChartJS.register(LinearScale, PointElement, LineElement);
 
-export const LineChart = () => {
-  const chartData = {
-    labels: dataDummyChart.map((d) => d.year),
-    datasets: [
-      {
-        label: 'Count',
-        data: dataDummyChart.map((d) => d.count),
-        borderColor: 'rgba(75, 192, 192, 1)',
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderWidth: 2,
-        tension: 0.3,
-        fill: true,
-      },
-    ],
-  };
+interface DataProps {
+  labels: string[];
+  datasets: {
+    label: string;
+    data: number[];
+  }[];
+}
 
+export const LineChart = (props: DataProps) => {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -38,10 +30,19 @@ export const LineChart = () => {
       },
     },
   };
-
+  const lineData = {
+    labels: props.labels.map((data) => data),
+    datasets: props.datasets.map((data) => ({
+      label: data.label,
+      data: data.data,
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      borderWidth: 2,
+    })),
+  };
   return (
     <div className="w-full  h-72 flex justify-center items-center">
-      <Line data={chartData} options={options} />
+      <Line data={lineData} options={options} />
     </div>
   );
 };

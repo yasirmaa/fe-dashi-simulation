@@ -1,74 +1,113 @@
 {
-  "products": [
-    {
-      "id": 1,
-      "name": "Laptop ASUS Zenbook 14",
-      "category": "Elektronik",
-      "price": 12000000,
-      "stock": 150
-    },
-    {
-      "id": 2,
-      "name": "Mouse Logitech MX Master 3S",
-      "category": "Aksesoris Komputer",
-      "price": 1500000,
-      "stock": 200
-    },
-    {
-      "id": 3,
-      "name": "Kemeja Pria Lengan Panjang Katun",
-      "category": "Fashion Pria",
-      "price": 250000,
-      "stock": 500
-    },
-    {
-      "id": 4,
-      "name": "SSD Samsung 980 Pro 1TB NVMe",
-      "category": "Komponen Komputer",
-      "price": 1800000,
-      "stock": 100
-    },
-    {
-      "id": 5,
-      "name": "Tas Ransel Pria Anti Air",
-      "category": "Fashion Pria",
-      "price": 350000,
-      "stock": 300
-    },
-    {
-      "id": 6,
-      "name": "Monitor LED LG 24 inch",
-      "category": "Elektronik",
-      "price": 2800000,
-      "stock": 120
-    },
-    {
-      "id": 7,
-      "name": "Keyboard Mekanik Redragon K630 Dragonborn",
-      "category": "Aksesoris Komputer",
-      "price": 750000,
-      "stock": 180
-    },
-    {
-      "id": 8,
-      "name": "Celana Panjang Jeans Pria Slim Fit",
-      "category": "Fashion Pria",
-      "price": 300000,
-      "stock": 450
-    },
-    {
-      "id": 9,
-      "name": "RAM Corsair Vengeance LPX 16GB DDR4",
-      "category": "Komponen Komputer",
-      "price": 900000,
-      "stock": 160
-    },
-    {
-      "id": 10,
-      "name": "Headphone Sony WH-1000XM5",
-      "category": "Elektronik",
-      "price": 4500000,
-      "stock": 90
+  "sales_data": {
+    "sales": [
+      {
+        "id": 1,
+        "product_name": "Laptop ASUS VivoBook 14",
+        "category": "Electronics",
+        "price": 8750000,
+        "quantity_sold": 3,
+        "total_revenue": 26250000,
+        "sale_date": "2025-06-28",
+        "region": "Jakarta"
+      },
+      {
+        "id": 2,
+        "product_name": "Laptop ASUS VivoBook 14",
+        "category": "Electronics",
+        "price": 8750000,
+        "quantity_sold": 2,
+        "total_revenue": 17500000,
+        "sale_date": "2025-06-29",
+        "region": "Jakarta"
+      },
+      {
+        "id": 3,
+        "product_name": "Kopi Arabika 250gr",
+        "category": "Food & Beverage",
+        "price": 75000,
+        "quantity_sold": 5,
+        "total_revenue": 375000,
+        "sale_date": "2025-06-28",
+        "region": "Bandung"
+      },
+      {
+        "id": 4,
+        "product_name": "Kopi Arabika 250gr",
+        "category": "Food & Beverage",
+        "price": 75000,
+        "quantity_sold": 8,
+        "total_revenue": 600000,
+        "sale_date": "2025-06-29",
+        "region": "Bandung"
+      },
+      {
+        "id": 5,
+        "product_name": "Mouse Wireless Logitech",
+        "category": "Electronics",
+        "price": 250000,
+        "quantity_sold": 4,
+        "total_revenue": 1000000,
+        "sale_date": "2025-06-28",
+        "region": "Surabaya"
+      },
+      {
+        "id": 6,
+        "product_name": "Mouse Wireless Logitech",
+        "category": "Electronics",
+        "price": 250000,
+        "quantity_sold": 6,
+        "total_revenue": 1500000,
+        "sale_date": "2025-06-29",
+        "region": "Surabaya"
+      }
+    ],
+    "summary": {
+      "total_transactions": 6,
+      "total_revenue": 47225000,
+      "date_range": "2025-06-28 to 2025-06-29"
     }
-  ]
+  },
+  "inventory_data": {
+    "products": [
+      {
+        "product_id": "P001",
+        "product_name": "Laptop ASUS VivoBook 14",
+        "category": "Electronics",
+        "current_stock": 15,
+        "minimum_stock": 5,
+        "max_stock": 50,
+        "unit_price": 8750000,
+        "supplier": "ASUS Indonesia",
+        "last_restock": "2025-06-25"
+      },
+      {
+        "product_id": "P002",
+        "product_name": "Kopi Arabika 250gr",
+        "category": "Food & Beverage",
+        "current_stock": 120,
+        "minimum_stock": 20,
+        "max_stock": 200,
+        "unit_price": 75000,
+        "supplier": "Kopi Nusantara",
+        "last_restock": "2025-06-27"
+      },
+      {
+        "product_id": "P003",
+        "product_name": "Mouse Wireless Logitech",
+        "category": "Electronics",
+        "current_stock": 8,
+        "minimum_stock": 10,
+        "max_stock": 30,
+        "unit_price": 250000,
+        "supplier": "Logitech Indonesia",
+        "last_restock": "2025-06-20"
+      }
+    ],
+    "warehouse_info": {
+      "total_products": 3,
+      "total_value": 140750000,
+      "low_stock_alerts": 1
+    }
+  }
 }

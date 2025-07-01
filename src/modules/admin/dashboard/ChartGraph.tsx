@@ -9,7 +9,7 @@ import { ScatterChart } from '@/components/molecules/chart/ScatterChart';
 export const ChartGraph = () => {
   return (
     <div className="grid grid-cols-2 gap-8 w-full h-full">
-      <LineChart />
+      {/* <LineChart /> */}
       {/* <BarChart /> */}
       <PieChart />
       <DoughnutChart />
